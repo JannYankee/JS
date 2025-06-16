@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Палітра блоків</title>
+  <style>
+    .palette, .blocks {
+      display: flex;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+    .color {
+      width: 30px;
+      height: 30px;
+      margin: 2px;
+      cursor: pointer;
+    }
+    .block {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h3>Палітра:</h3>
+<div class="palette" id="palette">
+  <div class="color" style="background-color: #8bc34a;"></div>
+  <div class="color" style="background-color: #00bcd4;"></div>
+  <div class="color" style="background-color: #9c27b0;"></div>
+  <div class="color" style="background-color: #ffc107;"></div>
+  <div class="color" style="background-color: #795548;"></div>
+</div>
+
+<button id="addBlock">Add block</button>
+
+<h3>Додані блоки:</h3>
+<div class="blocks" id="blocksContainer"></div>
+
+<script>
+  let selectedColor = null;
+
+  $(document).ready(function () {
+    const savedBlocks = JSON.parse(localStorage.getItem('blocks')) || [];
+    savedBlocks.forEach(color => addBlock(color));
+  });
+
+  $('#palette').on('click', '.color', function () {
+    selectedColor = $(this).css('background-color');
+  });
+
+  $('#addBlock').on('click', function () {
+    if (!selectedColor) {
+      alert('Виберіть колір!');
+      return;
+    }
+    addBlock(selectedColor);
+    saveBlocks();
+  });
+
+  function addBlock(color) {
+    const block = $('<div></div>')
+      .addClass('block')
+      .css('background-color', color)
+      .on('dblclick', function () {
+        $(this).remove();
+        saveBlocks();
+      });
+    $('#blocksContainer').append(block);
+  }
+
+  function saveBlocks() {
+    const colors = $('.block').map(function () {
+      return $(this).css('background-color');
+    }).get();
+    localStorage.setItem('blocks', JSON.stringify(colors));
+  }
+</script>
+
+</body>
+</html>
