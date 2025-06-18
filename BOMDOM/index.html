@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання BOM / DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Завдання 1: Посилання</h1>
+    <ul id="links">
+        <li><a href="index.html">index.html</a></li>
+        <li><a href="http://google.com">http://google.com</a></li>
+        <li><a href="https://itstep.org">https://itstep.org</a></li>
+        <li><a href="https://mystat.itstep.org">https://mystat.itstep.org</a></li>
+        <li><a href="/images/cat.jpg">/images/cat.jpg</a></li>
+        <li><a href="/local/path">/local/path</a></li>
+    </ul>
+
+    <h1>Завдання 2: Дерево каталогів</h1>
+    <ul id="tree">
+        <li><span>📁 This PC</span>
+            <ul>
+                <li><span>💽 Local Disk (C:)</span>
+                    <ul>
+                        <li><span>📁 Program Files</span></li>
+                        <li><span>📁 Users</span></li>
+                        <li><span>📁 Windows</span></li>
+                    </ul>
+                </li>
+                <li><span>💽 Local Disk (D:)</span>
+                    <ul>
+                        <li><span>📁 New Folder 1</span></li>
+                        <li><span>📁 New Folder 2</span></li>
+                    </ul>
+                </li>
+                <li><span>💽 Local Disk (E:)</span></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1>Завдання 3: Вибір книг</h1>
+    <ol id="bookList">
+        <li>JavaScript for Kids</li>
+        <li>Eloquent JavaScript</li>
+        <li>You Don't Know JS</li>
+        <li>JavaScript: The Good Parts</li>
+        <li>Programming JavaScript Applications</li>
+        <li>Effective JavaScript</li>
+        <li>JavaScript: The Definitive Guide</li>
+    </ol>
+
+    <h1>Завдання 4: Таблиця з сортуванням</h1>
+    <table id="sortable">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th data-type="number">Age</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Mark</td><td>Zuckerberg</td><td>34</td><td>Facebook</td></tr>
+            <tr><td>Larry</td><td>Page</td><td>45</td><td>Google</td></tr>
+            <tr><td>Timothy</td><td>Cook</td><td>57</td><td>Apple</td></tr>
+            <tr><td>Bill</td><td>Gates</td><td>62</td><td>Microsoft</td></tr>
+        </tbody>
+    </table>
+
+    <h1>Завдання 5: Блок з текстом</h1>
+    <div id="resizable" contenteditable="true">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
