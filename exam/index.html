@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <main class="wrapper">
+    <header>
+      <h1 class="app-title">Weather</h1>
+      <section class="search-panel">
+        <input id="locationField" type="text" placeholder="Type a location..." />
+        <button id="lookupBtn">Go</button>
+      </section>
+    </header>
+
+    <nav class="switcher">
+      <button class="nav-toggle selected" data-target="currentView">Current</button>
+      <button class="nav-toggle" data-target="weeklyView">Next 5 Days</button>
+    </nav>
+
+    <section id="currentView" class="view visible">
+      <div id="nowInfo"></div>
+      <div id="surroundingTowns"></div>
+    </section>
+
+    <section id="weeklyView" class="view">
+      <div id="futureSummary" class="day-list"></div>
+      <div id="hourlyForecast" class="hourly-details"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
