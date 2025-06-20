@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+  padding: 15px;
+  font-size: 14px;
+}
+
+#palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+#blocksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.block {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+#trafficLight {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.light {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.active {
+  box-shadow: 0 0 5px 2px #333;
+}
+
+.red.active { background: red; }
+.yellow.active { background: yellow; }
+.green.active { background: green; }
