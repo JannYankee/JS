@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Product Catalog</h1>
+    <button id="sortBtn">Sort by Price</button>
+    <div id="product-list" class="grid"></div>
+
+    <div id="product-detail" class="hidden">
+      <button id="backBtn">← Back</button>
+      <div class="detail-content">
+        <h2 id="detail-title"></h2>
+        <div class="detail-images" id="detail-images"></div>
+        <p id="detail-price"></p>
+        <p id="detail-rating"></p>
+        <p id="detail-description"></p>
+        <p id="detail-category"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
