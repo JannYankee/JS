@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Деталі фільму</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="details-container"></div>
+  <script>
+    const API_KEY = '123dfcb5';
+    const movieId = localStorage.getItem('selectedMovieId');
+
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&plot=full`)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('details-container');
+        container.innerHTML = `
+          <h1>${data.Title} (${data.Year})</h1>
+          <img src="${data.Poster !== 'N/A' ? data.Poster : 'https://via.placeholder.com/200x300'}" />
+          <p><strong>Жанри:</strong> ${data.Genre}</p>
+          <p><strong>Рейтинг:</strong> ${data.imdbRating}</p>
+          <p><strong>Актори:</strong> ${data.Actors}</p>
+          <p><strong>Опис:</strong> ${data.Plot}</p>
+          <p><strong>Тривалість:</strong> ${data.Runtime}</p>
+          <a href="index.html">← Назад до списку</a>
+        `;
+      });
+  </script>
+</body>
+</html>
